@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrepreneurship Blog Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-100 p-8">
+
+  <div class="max-w-7xl mx-auto space-y-12">
+    <!-- Header Section -->
+    <header class="text-center py-12 px-6 rounded-3xl shadow-xl bg-gray-800 bg-opacity-70 backdrop-blur-sm">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-blue-400 tracking-tight mb-4">
+        Entrepreneurship Blog Hub
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Manage your cell's content strategy and social media presence with ease.
+      </p>
+    </header>
+
+    <!-- Main Content Card -->
+    <div class="bg-gray-800 p-8 rounded-3xl shadow-2xl space-y-12">
+      <!-- Blog Creation Form -->
+      <div class="space-y-6">
+        <h2 id="form-heading" class="text-3xl font-bold flex items-center text-blue-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+               viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+               class="feather feather-plus-square text-blue-400 mr-3 w-8 h-8">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Create New Blog Post
+        </h2>
+        
+        <form id="blog-form" class="space-y-6">
+          <div>
+            <label for="title" class="block text-sm font-medium text-gray-400">Blog Title</label>
+            <input type="text" id="title" name="title" placeholder="E.g., The Art of the Pitch Deck"
+              class="mt-1 block w-full rounded-xl bg-gray-700 border-gray-600 
+                     focus:border-blue-500 focus:ring-blue-500 text-gray-100 p-3 shadow-sm transition duration-300" required>
+          </div>
+
+          <div>
+            <label for="content" class="block text-sm font-medium text-gray-400">Content</label>
+            <textarea id="content" name="content" rows="8" placeholder="Start writing your blog..."
+              class="mt-1 block w-full rounded-xl bg-gray-700 border-gray-600 
+                     focus:border-blue-500 focus:ring-blue-500 text-gray-100 p-3 shadow-sm transition duration-300" required></textarea>
+          </div>
+
+          <div>
+            <label for="image" class="block text-sm font-medium text-gray-400">Image Upload</label>
+            <input type="file" id="image" name="image" accept="image/*"
+              class="mt-1 block w-full text-sm text-gray-400 
+                     file:mr-4 file:py-2 file:px-4 file:rounded-xl 
+                     file:border-0 file:text-sm file:font-semibold 
+                     file:bg-blue-600 file:text-white hover:file:bg-blue-700">
+            <div id="image-preview" class="mt-4 hidden">
+              <img id="preview-img" alt="Preview" class="w-full h-48 object-cover rounded-xl">
+            </div>
+          </div>
+
+          <div>
+            <label for="tags" class="block text-sm font-medium text-gray-400">Tags (comma-separated)</label>
+            <input type="text" id="tags" name="tags" placeholder="E.g., startup, marketing, funding"
+              class="mt-1 block w-full rounded-xl bg-gray-700 border-gray-600 
+                     focus:border-blue-500 focus:ring-blue-500 text-gray-100 p-3 shadow-sm transition duration-300">
+          </div>
+
+          <button type="submit" id="submit-button"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 
+                   rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            Publish Blog Post
+          </button>
+        </form>
+      </div>
+
+      <hr id="divider" class="border-gray-700 hidden" />
+
+      <!-- Blog List -->
+      <div id="blog-list-container" class="space-y-6 hidden">
+        <h2 class="text-3xl font-bold text-blue-300">
+          Your Blog Posts (<span id="blog-count">0</span>)
+        </h2>
+        <div id="blog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Blog posts will be rendered here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
